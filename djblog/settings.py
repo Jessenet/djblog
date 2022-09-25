@@ -87,11 +87,17 @@ WSGI_APPLICATION = 'djblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbtest',
-        'USER': 'postgres', 
-        'PASSWORD': 'postdata',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
+        # 'NAME': 'dbtest',
+        # 'USER': 'postgres', 
+        # 'PASSWORD': 'postdata',
+        # 'HOST': '127.0.0.1', 
+        # 'PORT': '5432',
+        'host'     : 'app-6d4748e1-f2c2-44c1-8e50-f177fea99223-do-user-12507009-0.b.db.ondigitalocean.com',
+        'port'     : '25060',
+        'USER' : 'djblogdb',
+        'PASSWORD' : 'AVNS_ToZSMH9NnlUXch94AYH',
+        'NAME': 'djblogdb',
+        'sslmode'  : 'require',
     }
 }
 
