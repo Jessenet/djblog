@@ -16,15 +16,15 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# DEBUG = os.environ.get('DEBUG')
-# SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 
-SECRET_KEY = 'django-insecure-l%83#d2o4dg6eqq1otjumzjp0th@rw0oi1h6pz+fw$e9bpo=49'
+# SECRET_KEY = 'django-insecure-l%83#d2o4dg6eqq1otjumzjp0th@rw0oi1h6pz+fw$e9bpo=49'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
 
 
 
@@ -92,12 +92,12 @@ DATABASES = {
         # 'PASSWORD': 'postdata',
         # 'HOST': '127.0.0.1', 
         # 'PORT': '5432',
-        'host'     : 'app-6d4748e1-f2c2-44c1-8e50-f177fea99223-do-user-12507009-0.b.db.ondigitalocean.com',
-        'port'     : '25060',
-        'USER' : 'djblogdb',
-        'PASSWORD' : 'AVNS_ToZSMH9NnlUXch94AYH',
-        'NAME': 'djblogdb',
-        'sslmode'  : 'require',
+        'host'     :os.environ.get('DB_host'),
+        'port'     : os.environ.get('DB_port'),
+        'USER' : os.environ.get('DB_USER'),
+        'PASSWORD' : os.environ.get('DB_PASSWORD'),
+        'NAME': os.environ.get('DB_NAME'),
+        'sslmode'  : os.environ.get('sslmode'),
     }
 }
 
