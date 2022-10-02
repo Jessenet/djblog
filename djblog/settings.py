@@ -92,12 +92,19 @@ DATABASES = {
         # 'PASSWORD': 'postdata',
         # 'HOST': '127.0.0.1', 
         # 'PORT': '5432',
-        'host'     :os.environ.get('DB_host'),
-        'port'     : os.environ.get('DB_port'),
-        'USER' : os.environ.get('DB_USER'),
-        'PASSWORD' : os.environ.get('DB_PASSWORD'),
-        'NAME': os.environ.get('DB_NAME'),
-        'sslmode'  : os.environ.get('sslmode'),
+        # 'host'     :os.environ.get('DB_host'),
+        # 'port'     : os.environ.get('DB_port'),
+        # 'USER' : os.environ.get('DB_USER'),
+        # 'PASSWORD' : os.environ.get('DB_PASSWORD'),
+        # 'NAME': os.environ.get('DB_NAME'),
+        # 'sslmode'  : os.environ.get('sslmode'),
+
+        'host'     :"db-postgresql-nyc1-25125-do-user-12507009-0.b.db.ondigitalocean.com",
+        'port'     : "25060",
+        'USER' : "doadmin",
+        'PASSWORD' : "AVNS_tX-538qE2a89J5ZucMr",
+        'NAME': "defaultdb",
+        'sslmode'  : "require",
     }
 }
 
