@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'djblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+db_info = urlparse(DATABASE_URL)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -92,19 +93,14 @@ DATABASES = {
         # 'PASSWORD': 'postdata',
         # 'HOST': '127.0.0.1', 
         # 'PORT': '5432',
-        # 'host'     :os.environ.get('DB_host'),
-        # 'port'     : os.environ.get('DB_port'),
-        # 'USER' : os.environ.get('DB_USER'),
-        # 'PASSWORD' : os.environ.get('DB_PASSWORD'),
-        # 'NAME': os.environ.get('DB_NAME'),
-        # 'sslmode'  : os.environ.get('sslmode'),
 
-        'host'     :"db-postgresql-nyc1-25125-do-user-12507009-0.b.db.ondigitalocean.com",
-        'port'     : "25060",
-        'USER' : "doadmin",
-        'PASSWORD' : "AVNS_tX-538qE2a89J5ZucMr",
-        'NAME': "defaultdb",
-        'sslmode'  : "require",
+
+        'HOST'     :os.environ.get('DB_host'),
+        'PORT'     : os.environ.get('DB_port'),
+        'USER' : os.environ.get('DB_USER'),
+        'PASSWORD' : os.environ.get('DB_PASSWORD'),
+        'NAME': os.environ.get('DB_NAME'),
+
     }
 }
 
